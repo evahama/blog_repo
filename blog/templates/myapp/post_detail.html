@@ -1,0 +1,12 @@
+<!doctype html>
+{% extends "myapp/base.html" %}
+{% block title %}Eva Blog Detail Page{% endblock title %}
+
+    {% block content %}
+      <h1>Eva Blog</h1>
+
+          <h4>{{post_detail.title}}</h4>
+          <p id='date'>published on {{post_detail.publish}} by {{post_detail.author|title}}</p>
+          {{post_detail.body|linebreaks}}
+          <a href="/{{post_detail.id}}/share/">Share</a>
+    {% endblock content %}

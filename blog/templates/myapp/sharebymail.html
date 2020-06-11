@@ -1,0 +1,18 @@
+<!doctype html>
+{% extends "myapp/base.html" %}
+{% block title %}Share Post By Email{% endblock title %}
+
+    {% block content %}
+
+     {% if sent %}
+       <h2>The {{post.title}} sent successfully!</h2>
+     {% else %}
+     <h1>Share ' {{post.title}} ' by email</h1>
+       <form method="post">
+         {{form.as_p}}
+         {% csrf_token %}
+         <input type="submit" class="btn btn-primary" value="Send Email">
+       </form>
+     {% endif %}
+
+    {% endblock content %}
